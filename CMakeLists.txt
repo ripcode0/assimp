@@ -13,15 +13,17 @@ else()
     message(FATAL_ERROR "dosent support msvc ${MSVC} compiler")
 endif()
 
-set(ARCHITECTURE ${CMAKE_GENERATOR_PLATFORM})
+set(ARCHITECTURE ${CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE})
 
 message(STATUS "build with ${MSVC_NAME}/${ARCHITECTURE} compiler....")
 
 set(ASSIMP_INSTALL_DIR ${CMAKE_SOURCE_DIR}/installed/${MSVC_NAME}/${ARCHITECTURE})
 
-message(STATUS "install dir : ${ASSIMP_INSTALL_DIR}")
+message(STATUS "install dir : ${ASSIMP_INSTALL_DIR} ${CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE}")
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/module)
+
+include(assimp-build)
 
 
-add_subdirectory(assimp-external)
-
-file(DOWNLOAD "https://raw.githubusercontent.com/xarchx80/Graphics-fundamentals/main/CMake/Example/"  ${CMAKE_SOURCE_DIR}/example)
+#file(DOWNLOAD "https://raw.githubusercontent.com/xarchx80/Graphics-fundamentals/main/CMake/Example/"  ${CMAKE_SOURCE_DIR}/example)
