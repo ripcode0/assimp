@@ -1,0 +1,1 @@
+# Pre Built Assimp for MSVC 2015 - 2022
