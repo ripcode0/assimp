@@ -24,5 +24,5 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/module)
 message(STATUS "pre building ... : ${ASSIMP_INSTALL_DIR}")
 
 include(assimp-prebuilt)
-include(assimp-build)
+
 
